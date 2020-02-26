@@ -1,0 +1,18 @@
+{
+    "version": 2,
+    "regions": ["dub1"],
+    "rewrites": [
+        {
+            "source": "/rss",
+            "destination": "/api/rss"
+        },
+        {
+            "source": "/rss/fd",
+            "destination": "https://fd.nl?rss"
+        },
+        {
+            "source": "/rss/fd/:section",
+            "destination": "https://fd.nl/$1/?rss"
+        }
+    ]
+}

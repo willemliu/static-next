@@ -1,0 +1,5 @@
+.env*
+.next
+.now
+dist
+node_modules
