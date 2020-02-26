@@ -9,10 +9,16 @@ function Menu() {
                 <a>Home</a>
             </Link>
             <Link href="/test/[slug]" as="/test/hello-world">
-                <a>Test</a>
+                <a>Static</a>
             </Link>
             <Link href="/test/[slug]" as="/test/hello-world2">
-                <a>Test2</a>
+                <a>Static 2</a>
+            </Link>
+            <Link href="/rss/[slug]" as="/ssr/hello-world">
+                <a>SSR</a>
+            </Link>
+            <Link href="/rss/[slug]" as="/ssr/hello-world2">
+                <a>SSR 2</a>
             </Link>
         </nav>
     );
