@@ -20,6 +20,12 @@ function Menu() {
             <Link href="/ssr/[slug]" as="/ssr/hello-world2">
                 <a>SSR 2</a>
             </Link>
+            <Link href="/spa/[slug]" as="/spa/hello-world">
+                <a>SSR SPA</a>
+            </Link>
+            <Link href="/spa/[slug]" as="/spa/hello-world2">
+                <a>SSR SPA 2</a>
+            </Link>
         </nav>
     );
 }
