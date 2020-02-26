@@ -1,9 +1,10 @@
 import React from "react";
 import Link from "next/link";
+import styles from "./Menu.module.scss";
 
 function Menu() {
     return (
-        <nav>
+        <nav className={styles.nav}>
             <Link href="/">
                 <a>Home</a>
             </Link>
