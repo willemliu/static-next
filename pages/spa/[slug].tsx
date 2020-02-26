@@ -27,9 +27,7 @@ Index.getInitialProps = async (context) => {
         "https://static-next.willemliu.now.sh/api/test"
     ).then((res) => res.json());
     console.log("getServerProps", res, context.params, context.query);
-    return {
-        props: { ...res, name: context.params.slug }
-    };
+    return { ...res, name: context.params.slug };
 };
 
 export default Index;
