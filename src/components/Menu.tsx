@@ -6,13 +6,13 @@ function Menu() {
     return (
         <nav className={styles.nav}>
             <Link href="/">
-                <a>Home</a>
+                <a>Home SPA</a>
             </Link>
             <Link href="/ssg/[slug]" as="/ssg/hello-world">
-                <a>Static</a>
+                <a>Static SPA</a>
             </Link>
             <Link href="/ssg/[slug]" as="/ssg/hello-world2">
-                <a>Static 2</a>
+                <a>Static SPA 2</a>
             </Link>
             <Link href="/ssr/[slug]" as="/ssr/hello-world">
                 <a>SSR</a>

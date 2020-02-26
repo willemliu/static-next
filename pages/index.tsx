@@ -30,6 +30,6 @@ const getStaticProps = async ({ params }) => {
     return { props: { ...res } };
 };
 
-export { getStaticProps as unstable_getStaticProps };
+export { getStaticProps as unstable_getStaticProps, Index };
 
 export default Index;
