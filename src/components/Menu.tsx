@@ -14,10 +14,10 @@ function Menu() {
             <Link href="/test/[slug]" as="/test/hello-world2">
                 <a>Static 2</a>
             </Link>
-            <Link href="/rss/[slug]" as="/ssr/hello-world">
+            <Link href="/ssr/[slug]" as="/ssr/hello-world">
                 <a>SSR</a>
             </Link>
-            <Link href="/rss/[slug]" as="/ssr/hello-world2">
+            <Link href="/ssr/[slug]" as="/ssr/hello-world2">
                 <a>SSR 2</a>
             </Link>
         </nav>
