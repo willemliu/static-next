@@ -8,7 +8,7 @@ function Index(props: any) {
         <>
             <Menu />
             <h1>Test {props?.name}</h1>
-            {props?.date && <p>Static site generation: {props?.date}</p>}
+            {props?.date && <p>Site generated on: {props?.date}</p>}
             <div>
                 <a
                     href="https://api.zeit.co/v1/integrations/deploy/QmNYzrk6Y9P1qL6PWVTnp9fForR7FuZp8JTfFyZ71CnVVS/Z7ZOSYG4EM"
