@@ -8,6 +8,7 @@ function Index(props: any) {
         <>
             <Menu />
             <h1>Test {props?.name}</h1>
+            {props?.date && <p>Static site generation: {props?.date}</p>}
         </>
     );
 }
