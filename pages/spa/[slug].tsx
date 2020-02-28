@@ -8,6 +8,11 @@ function Index(props: any) {
         <>
             <Menu />
             <h1>Test {props?.name}</h1>
+            <p>
+                Hybrid SSR works as follows. If you land on the URL directly
+                then you'll get a SSR page. When you navigate to this page using
+                the links on the website you'll get a CSR page.
+            </p>
             {props?.date && <p>Site generated on: {props?.date}</p>}
             <div>
                 <a

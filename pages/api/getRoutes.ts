@@ -1,10 +1,11 @@
 export default (req, res) => {
+    console.log(req.query);
     res.statusCode = 200;
     res.setHeader("Content-Type", "application/json");
     res.end(
         JSON.stringify([
-            { params: { slug: "hello-world" } },
-            { params: { slug: "hello-world2" } }
+            { params: { slug: "static-generated" } },
+            { params: { slug: "static-generated2" } }
         ])
     );
 };
