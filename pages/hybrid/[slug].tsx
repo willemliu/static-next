@@ -7,7 +7,7 @@ function Index(props: any) {
     return (
         <>
             <Menu />
-            <h1>Test {props?.name}</h1>
+            <h1>Hybrid-SSR [{props?.name}]</h1>
             <p>
                 Hybrid SSR works as follows. If you land on the URL directly
                 then you'll get a SSR page. When you navigate to this page using

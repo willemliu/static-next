@@ -20,11 +20,17 @@ function Menu() {
             <Link href="/ssr/[slug]" as="/ssr/server-side-rendered2">
                 <a>SSR 2</a>
             </Link>
-            <Link href="/spa/[slug]" as="/spa/hybrid-ssr">
+            <Link href="/hybrid/[slug]" as="/hybrid/hybrid-ssr">
                 <a>Hybrid-SSR SPA</a>
             </Link>
-            <Link href="/spa/[slug]" as="/spa/hybrid-ssr2">
+            <Link href="/hybrid/[slug]" as="/hybrid/hybrid-ssr2">
                 <a>Hybrid-SSR SPA 2</a>
+            </Link>
+            <Link href="/csr/[slug]" as="/csr/client-side-rendered">
+                <a>CSR SPA</a>
+            </Link>
+            <Link href="/csr/[slug]" as="/csr/client-side-rendered2">
+                <a>CSR SPA 2</a>
             </Link>
         </nav>
     );

@@ -7,7 +7,7 @@ function Index(props: any) {
     return (
         <>
             <Menu />
-            <h1>Test {props?.name}</h1>
+            <h1>Home</h1>
             {props?.date && <p>Site generated on: {props?.date}</p>}
             <div>
                 <a

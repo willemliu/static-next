@@ -1,5 +1,21 @@
 import "isomorphic-unfetch";
-import { Index } from "../index";
+import { Menu } from "../../src/components/Menu";
+import { Regenerate } from "../../src/components/Regenerate";
+
+function Index(props: any) {
+    console.log(props);
+    return (
+        <>
+            <Menu />
+            <h1>SSG [{props?.name}]</h1>
+            <p>
+                This page is statically generated and does not update until
+                redeployed. Use the `Regenerate site` link below to redeploy.
+            </p>
+            <Regenerate date={props?.date} />
+        </>
+    );
+}
 
 async function getStaticProps(context) {
     const res = await fetch(
