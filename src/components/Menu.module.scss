@@ -1,4 +1,9 @@
 .nav {
+    display: flex;
+    flex-direction: column;
+    @media screen and (min-width: 640px) {
+        flex-direction: row;
+    } 
     a {
         padding: 1rem 1rem 1rem 0;
     }
