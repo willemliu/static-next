@@ -23,7 +23,7 @@ function Index() {
             <Menu />
             <h1>CSR [{testData?.name}]</h1>
             <p>
-                This page is client-side-rendered. Data is fetched and set on
+                This page is client-side-rendered. This implementation uses
                 useEffect.
             </p>
             <Regenerate date={testData?.date} />
