@@ -11,10 +11,12 @@ function Index(props: any) {
             <p>
                 Hybrid SSR works as follows. If you land on the URL directly
                 then you'll get a SSR page. When you navigate to this page using
-                the links on the website you'll get a CSR page. This
-                implementation uses getInitialProps.
+                the links on the website you'll get a CSR page.
             </p>
-            {props?.date && <p>Site generated on: {props?.date}</p>}
+            <p>
+                This implementation uses <i>getInitialProps</i>.
+            </p>
+            {props?.date && <p>Page generated on: {props?.date}</p>}
             <div>
                 <a
                     href="https://api.zeit.co/v1/integrations/deploy/QmNYzrk6Y9P1qL6PWVTnp9fForR7FuZp8JTfFyZ71CnVVS/Z7ZOSYG4EM"

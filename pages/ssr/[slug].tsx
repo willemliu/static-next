@@ -11,7 +11,10 @@ function Index(props: any) {
             <p>
                 This page is server-side-rendered. No matter how you land on
                 this page (link or direct). You'll always be served a SSR
-                version of the page. This implementation uses getServerProps.
+                version of the page.
+            </p>
+            <p>
+                This implementation uses <i>getServerProps</i>.
             </p>
             <Regenerate date={props?.date} />
         </>

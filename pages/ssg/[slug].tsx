@@ -11,7 +11,10 @@ function Index(props: any) {
             <p>
                 This page is statically generated and does not update until
                 redeployed. Use the `Regenerate site` link below to redeploy.
-                This implementation uses getStaticProps and getStaticPaths.
+            </p>
+            <p>
+                This implementation uses <i>getStaticProps</i> and{" "}
+                <i>getStaticPaths</i>.
             </p>
             <Regenerate date={props?.date} />
         </>
