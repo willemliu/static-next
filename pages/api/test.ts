@@ -1,4 +1,7 @@
-export default (req, res) => {
+import Cors from "micro-cors";
+const cors = Cors({ allowMethods: ["GET", "HEAD"] });
+
+function test(req, res) {
     res.statusCode = 200;
     res.setHeader("Content-Type", "application/json");
     res.end(
@@ -7,4 +10,6 @@ export default (req, res) => {
             date: new Date().toLocaleString()
         })
     );
-};
+}
+
+export default cors(test);

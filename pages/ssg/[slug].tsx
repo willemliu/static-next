@@ -3,14 +3,24 @@ import { Menu } from "../../src/components/Menu";
 import { Regenerate } from "../../src/components/Regenerate";
 
 function Index(props: any) {
-    console.log(props);
     return (
         <>
             <Menu />
             <h1>SSG [{props?.name}]</h1>
             <p>
                 This page is statically generated and does not update until
-                redeployed. Use the `Regenerate site` link below to redeploy.
+                redeployed. You'll notice that the "Page generated on:" date
+                doesn't change until the website is redeployed. Use the
+                "Regenerate site" link below to redeploy.
+            </p>
+            <p>
+                Some of the effects of SSG:
+                <ul>
+                    <li>Short TTFB (can compete with CSR)</li>
+                    <li>Static data (can be stale if not used correctly)</li>
+                    <li>No flickering caused by rendering dynamic data</li>
+                    <li>SPA capable</li>
+                </ul>
             </p>
             <p>
                 This implementation uses <i>getStaticProps</i> and{" "}

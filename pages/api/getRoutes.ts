@@ -1,4 +1,7 @@
-export default (req, res) => {
+import Cors from "micro-cors";
+const cors = Cors({ allowMethods: ["GET", "HEAD"] });
+
+function getRoutes(req, res) {
     console.log(req.query);
     res.statusCode = 200;
     res.setHeader("Content-Type", "application/json");
@@ -8,4 +11,6 @@ export default (req, res) => {
             { params: { slug: "static-generated2" } }
         ])
     );
-};
+}
+
+export default cors(getRoutes);
