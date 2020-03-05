@@ -4,7 +4,6 @@ import { Menu } from "../src/components/Menu";
 import { Regenerate } from "../src/components/Regenerate";
 
 function Index(props: any) {
-    console.log(props);
     return (
         <>
             <Menu />
