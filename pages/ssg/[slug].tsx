@@ -13,15 +13,13 @@ function Index(props: any) {
                 doesn't change until the website is redeployed. Use the
                 "Regenerate site" link below to redeploy.
             </p>
-            <p>
-                Some of the effects of SSG:
-                <ul>
-                    <li>Short TTFB (can compete with CSR)</li>
-                    <li>Static data (can be stale if not used correctly)</li>
-                    <li>No flickering caused by rendering dynamic data</li>
-                    <li>SPA capable</li>
-                </ul>
-            </p>
+            <p>Some of the effects of SSG:</p>
+            <ul>
+                <li>Short TTFB (can compete with CSR)</li>
+                <li>Static data (can be stale if not used correctly)</li>
+                <li>No flickering caused by rendering dynamic data</li>
+                <li>SPA capable</li>
+            </ul>
             <p>
                 This implementation uses <i>getStaticProps</i> and{" "}
                 <i>getStaticPaths</i>.

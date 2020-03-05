@@ -14,15 +14,13 @@ function Index(props: any) {
                 with every visit because the page is re-rendered server-side
                 upon every visit.
             </p>
-            <p>
-                Some of the effects of SSR:
-                <ul>
-                    <li>Always longest TTFB</li>
-                    <li>Always the up-to-date version of the page</li>
-                    <li>No flickering caused by rendering dynamic data</li>
-                    <li>Breaks SPA navigation</li>
-                </ul>
-            </p>
+            <p>Some of the effects of SSR:</p>
+            <ul>
+                <li>Always longest TTFB</li>
+                <li>Always the up-to-date version of the page</li>
+                <li>No flickering caused by rendering dynamic data</li>
+                <li>Breaks SPA navigation</li>
+            </ul>
             <p>
                 This implementation uses <i>getServerProps</i>.
             </p>

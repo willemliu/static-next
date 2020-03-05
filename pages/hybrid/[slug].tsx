@@ -19,22 +19,20 @@ function Index(props: any) {
                 <i>getInitialProps</i> is called client-side. A log statement is
                 made in the developer console so you can check it yourself.
             </p>
-            <p>
-                Some of the effects of Hybrid-SSR:
-                <ul>
-                    <li>Long TTFB (when directly hitting an endpoint)</li>
-                    <li>
-                        Short TTFB (when navigating using the links on the page
-                        as SPA)
-                    </li>
-                    <li>
-                        Always up-to-date version of the data (SSR or CSR with
-                        re-hydration)
-                    </li>
-                    <li>No flickering caused by rendering dynamic data</li>
-                    <li>SPA capable</li>
-                </ul>
-            </p>
+            <p>Some of the effects of Hybrid-SSR:</p>
+            <ul>
+                <li>Long TTFB (when directly hitting an endpoint)</li>
+                <li>
+                    Short TTFB (when navigating using the links on the page as
+                    SPA)
+                </li>
+                <li>
+                    Always up-to-date version of the data (SSR or CSR with
+                    re-hydration)
+                </li>
+                <li>No flickering caused by rendering dynamic data</li>
+                <li>SPA capable</li>
+            </ul>
             <p>
                 This implementation uses <i>getInitialProps</i>.
             </p>

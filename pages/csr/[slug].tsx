@@ -33,17 +33,13 @@ function Index() {
                 and interpreted). This flickering is most noticable when you do
                 a hard reload of the page.
             </p>
-            <p>
-                Some of the effects of CSR:
-                <ul>
-                    <li>Always shortest TTFB</li>
-                    <li>
-                        Always the up-to-date version of the page (after TTI)
-                    </li>
-                    <li>Flickering caused by rendering dynamic data (TTI)</li>
-                    <li>SPA capable</li>
-                </ul>
-            </p>
+            <p>Some of the effects of CSR:</p>
+            <ul>
+                <li>Always shortest TTFB</li>
+                <li>Always the up-to-date version of the page (after TTI)</li>
+                <li>Flickering caused by rendering dynamic data (TTI)</li>
+                <li>SPA capable</li>
+            </ul>
             <p>
                 This implementation uses <i>useEffect</i>.
             </p>
