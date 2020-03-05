@@ -3,7 +3,7 @@ import { Menu } from "../../src/components/Menu";
 import { Regenerate } from "../../src/components/Regenerate";
 import { useRouter } from "next/router";
 
-function Index(props: any) {
+function Index() {
     const router = useRouter();
     const [testData, setTestData] = useState(null);
 
