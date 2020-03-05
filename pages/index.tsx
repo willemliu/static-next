@@ -1,6 +1,7 @@
 import React from "react";
 import "isomorphic-unfetch";
 import { Menu } from "../src/components/Menu";
+import { Regenerate } from "../src/components/Regenerate";
 
 function Index(props: any) {
     console.log(props);
@@ -8,16 +9,23 @@ function Index(props: any) {
         <>
             <Menu />
             <h1>Home</h1>
-            {props?.date && <p>Page generated on: {props?.date}</p>}
-            <div>
-                <a
-                    href="https://api.zeit.co/v1/integrations/deploy/QmNYzrk6Y9P1qL6PWVTnp9fForR7FuZp8JTfFyZ71CnVVS/Z7ZOSYG4EM"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Regenerate site
-                </a>
-            </div>
+            <p>Welcome to the NextJS rendering strategies demo.</p>
+            <p>
+                Use the links above to see the effects/pros/cons of each of the
+                rendering methods.
+            </p>
+            <p>
+                Use the "Regenerate site" link below to regenerate the
+                statically generated pages on this website. The effect is the
+                date behind "Page generated on:" will be set to the moment the
+                statically generated page is generated.
+            </p>
+            <p>
+                On dynamically rendered pages the date behind "Page generated
+                on:" always reflects the moment the page is being rendered.
+            </p>
+
+            <Regenerate date={props?.date} />
         </>
     );
 }

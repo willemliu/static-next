@@ -1,6 +1,7 @@
 import React from "react";
 import "isomorphic-unfetch";
 import { Menu } from "../../src/components/Menu";
+import { Regenerate } from "../../src/components/Regenerate";
 
 function Index(props: any) {
     return (
@@ -37,16 +38,7 @@ function Index(props: any) {
             <p>
                 This implementation uses <i>getInitialProps</i>.
             </p>
-            {props?.date && <p>Page generated on: {props?.date}</p>}
-            <div>
-                <a
-                    href="https://api.zeit.co/v1/integrations/deploy/QmNYzrk6Y9P1qL6PWVTnp9fForR7FuZp8JTfFyZ71CnVVS/Z7ZOSYG4EM"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Regenerate site
-                </a>
-            </div>
+            <Regenerate date={props?.date} />
         </>
     );
 }
