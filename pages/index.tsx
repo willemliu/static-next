@@ -20,8 +20,27 @@ function Index(props: any) {
                 statically generated page is generated.
             </p>
             <p>
+                Static pages:
+                <ul>
+                    <li>Home SPA</li>
+                    <li>Static SPA</li>
+                    <li>Static SPA 2</li>
+                </ul>
+            </p>
+            <p>
                 On dynamically rendered pages the date behind "Page generated
                 on:" always reflects the moment the page is being rendered.
+            </p>
+            <p>
+                Dynamic pages:
+                <ul>
+                    <li>SSR</li>
+                    <li>SSR 2</li>
+                    <li>Hybrid-SSR SPA</li>
+                    <li>Hybrid-SSR SPA 2</li>
+                    <li>CSR SPA</li>
+                    <li>CSR SPA 2</li>
+                </ul>
             </p>
 
             <Regenerate date={props?.date} />
