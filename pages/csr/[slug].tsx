@@ -37,7 +37,9 @@ function Index() {
                 Some of the effects of CSR:
                 <ul>
                     <li>Always shortest TTFB</li>
-                    <li>Always the up-to-date version of the page</li>
+                    <li>
+                        Always the up-to-date version of the page (after TTI)
+                    </li>
                     <li>Flickering caused by rendering dynamic data (TTI)</li>
                     <li>SPA capable</li>
                 </ul>
