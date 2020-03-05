@@ -33,7 +33,7 @@ async function getStaticProps(context) {
     const res = await fetch(
         "https://static-next.willemliu.now.sh/api/test"
     ).then((res) => res.json());
-    console.log("getStaticProps", res, context);
+    console.log("getStaticProps", res, context.params, context.query);
     return { props: { ...res, name: context.params.slug } };
 }
 

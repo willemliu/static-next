@@ -3,18 +3,16 @@ import { Menu } from "../../src/components/Menu";
 import { Regenerate } from "../../src/components/Regenerate";
 import { useRouter } from "next/router";
 
-function Index() {
+function Index(props: any) {
     const router = useRouter();
     const [testData, setTestData] = useState(null);
 
     useEffect(() => {
-        console.log("useEffect", router);
+        console.log("useEffect", router, router.query);
         fetch(`//${window.location.host}/api/test`)
             .then((res) => res.json())
             .then((json) => {
-                const parts = router.asPath.split("/");
-                const slug = parts[parts.length - 1];
-                setTestData({ ...json, name: slug });
+                setTestData({ ...json, name: router.query.slug });
             });
     }, [router]);
 

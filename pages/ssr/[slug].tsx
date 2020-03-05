@@ -35,7 +35,7 @@ async function getServerProps(context) {
     ).then((res) => res.json());
     console.log("getServerProps", res, context.params, context.query);
     return {
-        props: { ...res, name: context.params.slug }
+        props: { ...res, name: context.query.slug }
     };
 }
 

@@ -45,7 +45,7 @@ Index.getInitialProps = async (context) => {
     const res = await fetch(
         "https://static-next.willemliu.now.sh/api/test"
     ).then((res) => res.json());
-    console.log("getInitialProps", res, context.query);
+    console.log("getInitialProps", res, context.params, context.query);
     return { ...res, name: context.query.slug };
 };
 
