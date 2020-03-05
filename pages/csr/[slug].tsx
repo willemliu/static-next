@@ -30,7 +30,8 @@ function Index() {
                 pages on this website. That's because some of the values
                 rendered into this page are dynamic and can only be rendered
                 after the page is interactive (all JS is loaded by the browser
-                and interpreted).
+                and interpreted). This flickering is most noticable when you do
+                a hard reload of the page.
             </p>
             <p>
                 Some of the effects of CSR:
