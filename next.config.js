@@ -1,5 +1,7 @@
 module.exports = {
     experimental: {
-        scss: true
+        modern: true,
+        scss: true,
+        polyfillsOptimization: true
     }
 };
