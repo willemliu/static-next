@@ -18,7 +18,6 @@ function Index() {
 
     return (
         <>
-            <Menu />
             <h1>CSR [{testData?.name}]</h1>
             <p>
                 This page is client-side-rendered. The "Page generated on:" date

@@ -6,7 +6,6 @@ import { Regenerate } from "../../src/components/Regenerate";
 function Index(props: any) {
     return (
         <>
-            <Menu />
             <h1>Hybrid-SSR [{props?.name}]</h1>
             <p>
                 Hybrid SSR works as follows. If you land on the URL directly

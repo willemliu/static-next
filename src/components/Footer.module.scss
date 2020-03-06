@@ -1,0 +1,12 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+        opacity: 0.5;
+        width: 2rem;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}

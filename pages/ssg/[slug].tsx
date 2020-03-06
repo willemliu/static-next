@@ -5,7 +5,6 @@ import { Regenerate } from "../../src/components/Regenerate";
 function Index(props: any) {
     return (
         <>
-            <Menu />
             <h1>SSG [{props?.name}]</h1>
             <p>
                 This page is statically generated and does not update until

@@ -5,7 +5,6 @@ import { Regenerate } from "../../src/components/Regenerate";
 function Index(props: any) {
     return (
         <>
-            <Menu />
             <h1>SSR [{props?.name}]</h1>
             <p>
                 This page is server-side-rendered. No matter how you land on
