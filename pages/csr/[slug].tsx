@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Menu } from "../../src/components/Menu";
 import { Regenerate } from "../../src/components/Regenerate";
 import { useRouter } from "next/router";
 

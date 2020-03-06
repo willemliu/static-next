@@ -1,5 +1,4 @@
 import "isomorphic-unfetch";
-import { Menu } from "../../src/components/Menu";
 import { Regenerate } from "../../src/components/Regenerate";
 
 function Index(props: any) {

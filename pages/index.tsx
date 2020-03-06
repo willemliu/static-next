@@ -1,13 +1,11 @@
 import React from "react";
 import "isomorphic-unfetch";
-import { Menu } from "../src/components/Menu";
 import { Regenerate } from "../src/components/Regenerate";
 import Link from "next/link";
 
 function Index(props: any) {
     return (
         <>
-            <Menu />
             <h1>Home</h1>
             <p>Welcome to the NextJS rendering strategies demo.</p>
             <p>
