@@ -8,8 +8,9 @@ function Footer() {
                 href="https://github.com/willemliu/static-next"
                 target="_blank"
                 rel="noopener noreferrer"
+                title="Github"
             >
-                <img src="/images/github.svg" />
+                <img src="/images/github.svg" alt="Github" />
             </a>
         </footer>
     );

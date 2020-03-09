@@ -1,20 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 interface Props {
     date?: string;
 }
 
 function Regenerate(props: Props) {
+    const [baseUrl, setBaseUrl] = useState("http://localhost:3000");
+    useEffect(() => {
+        setBaseUrl(window.location.host);
+    }, []);
+
     return (
         <>
             {props?.date && <p>Page generated on: {props?.date}</p>}
             <div>
                 <a
-                    href="https://api.zeit.co/v1/integrations/deploy/QmNYzrk6Y9P1qL6PWVTnp9fForR7FuZp8JTfFyZ71CnVVS/Z7ZOSYG4EM"
+                    href={`${baseUrl}/api/regenerate`}
                     target="_blank"
                     rel="noopener noreferrer"
                 >
                     Regenerate site
-                </a>
+                </a>{" "}
+                <small>(takes a minute)</small>
             </div>
         </>
     );
