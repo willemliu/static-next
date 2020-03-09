@@ -4,9 +4,11 @@ interface Props {
 }
 
 function Regenerate(props: Props) {
-    const [baseUrl, setBaseUrl] = useState("http://localhost:3000");
+    const [protocol, setProtocol] = useState("http:");
+    const [host, setHost] = useState("localhost:3000");
     useEffect(() => {
-        setBaseUrl(window.location.host);
+        setHost(window.location.host);
+        setProtocol(window.location.protocol);
     }, []);
 
     return (
@@ -14,7 +16,7 @@ function Regenerate(props: Props) {
             {props?.date && <p>Page generated on: {props?.date}</p>}
             <div>
                 <a
-                    href={`${baseUrl}/api/regenerate`}
+                    href={`${protocol}//${host}/api/regenerate`}
                     target="_blank"
                     rel="noopener noreferrer"
                 >
