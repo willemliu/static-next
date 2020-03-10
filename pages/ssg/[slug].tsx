@@ -37,6 +37,11 @@ function Index(props: any) {
                         Subsequent visits to this weird URL will then serve up
                         the statically generated version.
                     </p>
+                    <small>
+                        P.s. because I use `next/link` component here automatic
+                        prefetching is enabled and it will trigger the initial
+                        static generation automagically.
+                    </small>
                 </li>
             </ul>
             <p>
