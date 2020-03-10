@@ -2,6 +2,8 @@ import React from "react";
 import "isomorphic-unfetch";
 import { Regenerate } from "../src/components/Regenerate";
 import Link from "next/link";
+import { getData } from "./api/test";
+import { DebugArea } from "../src/components/DebugArea";
 
 function Index(props: any) {
     return (
@@ -76,16 +78,15 @@ function Index(props: any) {
                 </li>
             </ul>
             <Regenerate date={props?.date} />
+            <DebugArea value={props?.debugValue} />
         </>
     );
 }
 
-export const getStaticProps = async ({ params }) => {
-    console.log("getStaticProps", params);
-    const res = await fetch(
-        "https://static-next.willemliu.now.sh/api/test"
-    ).then((res) => res.json());
-    return { props: { ...res } };
+export const getStaticProps = async (context: any) => {
+    const res = await getData("stranger things");
+    console.log("getStaticProps", res, context.params, context.query);
+    return { props: { ...res, debugValue: JSON.stringify(res, null, 2) } };
 };
 
 export default Index;

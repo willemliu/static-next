@@ -1,6 +1,8 @@
 import "isomorphic-unfetch";
 import { Regenerate } from "../../src/components/Regenerate";
 import Link from "next/link";
+import { DebugArea } from "../../src/components/DebugArea";
+import { getData } from "../api/test";
 
 function Index(props: any) {
     return (
@@ -49,16 +51,16 @@ function Index(props: any) {
                 <i>getStaticPaths</i>.
             </p>
             <Regenerate date={props?.date} />
+            <DebugArea value={props?.debugValue} />
         </>
     );
 }
 
 export async function getStaticProps(context: any) {
-    const res = await fetch(
-        "https://static-next.willemliu.now.sh/api/test"
-    ).then((res) => res.json());
+    const res = await getData("stranger things");
+    const data = { ...res, name: context.params.slug ?? context.query };
     console.log("getStaticProps", res, context.params, context.query);
-    return { props: { ...res, name: context.params.slug ?? context.query } };
+    return { props: { ...data, debugValue: JSON.stringify(data, null, 2) } };
 }
 
 export async function getStaticPaths(context: any) {

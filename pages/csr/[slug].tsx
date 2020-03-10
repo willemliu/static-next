@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { Regenerate } from "../../src/components/Regenerate";
 import { useRouter } from "next/router";
+import { getData } from "../api/test";
+import { DebugArea } from "../../src/components/DebugArea";
 
 function Index() {
     const router = useRouter();
     const [testData, setTestData] = useState(null);
+    const [debugValue, setDebugValue] = useState(null);
 
     useEffect(() => {
         console.log("useEffect", router, router.query);
-        fetch(`//${window.location.host}/api/test`)
-            .then((res) => res.json())
-            .then((json) => {
-                setTestData({ ...json, name: router.query.slug });
-            });
+        getData("stranger things").then((json) => {
+            const data = { ...json, name: router.query.slug };
+            setTestData(data);
+            setDebugValue(JSON.stringify(data, null, 2));
+        });
     }, [router]);
 
     return (
@@ -40,6 +43,7 @@ function Index() {
                 This implementation uses <i>useEffect</i>.
             </p>
             <Regenerate date={testData?.date} />
+            <DebugArea value={debugValue} />
         </>
     );
 }

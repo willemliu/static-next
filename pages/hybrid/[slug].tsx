@@ -1,6 +1,8 @@
 import React from "react";
 import "isomorphic-unfetch";
 import { Regenerate } from "../../src/components/Regenerate";
+import { getData } from "../api/test";
+import { DebugArea } from "../../src/components/DebugArea";
 
 function Index(props: any) {
     return (
@@ -35,16 +37,16 @@ function Index(props: any) {
                 This implementation uses <i>getInitialProps</i>.
             </p>
             <Regenerate date={props?.date} />
+            <DebugArea value={props?.debugValue} />
         </>
     );
 }
 
 Index.getInitialProps = async (context: any) => {
-    const res = await fetch(
-        "https://static-next.willemliu.now.sh/api/test"
-    ).then((res) => res.json());
+    const res = await getData("stranger things");
     console.log("getInitialProps", res, context.params, context.query);
-    return { ...res, name: context.query.slug };
+    const data = { ...res, name: context.query.slug };
+    return { ...data, debugValue: JSON.stringify(data, null, 2) };
 };
 
 export default Index;

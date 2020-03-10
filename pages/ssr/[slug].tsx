@@ -1,5 +1,7 @@
 import "isomorphic-unfetch";
 import { Regenerate } from "../../src/components/Regenerate";
+import { getData } from "../api/test";
+import { DebugArea } from "../../src/components/DebugArea";
 
 function Index(props: any) {
     return (
@@ -30,17 +32,17 @@ function Index(props: any) {
                 This implementation uses <i>getServerSideProps</i>.
             </p>
             <Regenerate date={props?.date} />
+            <DebugArea value={props?.debugValue} />
         </>
     );
 }
 
 export async function getServerSideProps(context: any) {
-    const res = await fetch(
-        "https://static-next.willemliu.now.sh/api/test"
-    ).then((res) => res.json());
+    const res = await getData("stranger things");
     console.log("getServerProps", res, context.params, context.query);
+    const data = { ...res, name: context.query.slug };
     return {
-        props: { ...res, name: context.query.slug }
+        props: { ...data, debugValue: JSON.stringify(data, null, 2) }
     };
 }
 
