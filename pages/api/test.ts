@@ -4,6 +4,19 @@ import { SEARCH_NEWS } from "../../src/graphql/queries/search";
 import { getApolloClient } from "../../src/graphql/client";
 const cors = Cors({ allowMethods: ["GET", "HEAD"] });
 
+export async function getPretendApiData() {
+    const res = await Promise.all([
+        getData(),
+        getMovieSomData("marvel"),
+        getMovieSomData("netflix")
+    ]);
+    return {
+        ...res[0],
+        marvel: res[1],
+        netflix: res[2]
+    };
+}
+
 async function getMovieSomData(searchString?: string, offset = 0) {
     let data = {};
     try {
@@ -31,19 +44,16 @@ async function getMovieSomData(searchString?: string, offset = 0) {
     return data;
 }
 
-export async function getData(searchString?: string, offset = 0) {
+async function getData() {
     return {
-        name: "Home",
-        date: new Date().toLocaleString(),
-        news: await getMovieSomData(null, offset),
-        search: await getMovieSomData(searchString, offset)
+        date: new Date().toLocaleString()
     };
 }
 
 async function test(req, res) {
     res.statusCode = 200;
     res.setHeader("Content-Type", "application/json");
-    res.end(JSON.stringify(await getData()));
+    res.end(JSON.stringify(await getPretendApiData()));
 }
 
 export default cors(test);

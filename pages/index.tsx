@@ -2,7 +2,7 @@ import React from "react";
 import "isomorphic-unfetch";
 import { Regenerate } from "../src/components/Regenerate";
 import Link from "next/link";
-import { getData } from "./api/test";
+import { getPretendApiData } from "./api/test";
 import { DebugArea } from "../src/components/DebugArea";
 
 function Index(props: any) {
@@ -84,9 +84,14 @@ function Index(props: any) {
 }
 
 export const getStaticProps = async (context: any) => {
-    const res = await getData("stranger things");
-    console.log("getStaticProps", res, context.params, context.query);
-    return { props: { ...res, debugValue: JSON.stringify(res, null, 2) } };
+    const res = await getPretendApiData();
+
+    console.log("getStaticProps", context.params, context.query);
+    const data = {
+        ...res,
+        name: "Home"
+    };
+    return { props: { ...data, debugValue: JSON.stringify(data, null, 2) } };
 };
 
 export default Index;
