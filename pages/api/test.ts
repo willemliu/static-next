@@ -4,19 +4,6 @@ import { SEARCH_NEWS } from "../../src/graphql/queries/search";
 import { getApolloClient } from "../../src/graphql/client";
 const cors = Cors({ allowMethods: ["GET", "HEAD"] });
 
-export async function getPretendApiData() {
-    const res = await Promise.all([
-        getData(),
-        getMovieSomData("marvel"),
-        getMovieSomData("netflix")
-    ]);
-    return {
-        ...res[0],
-        marvel: res[1],
-        netflix: res[2]
-    };
-}
-
 async function getMovieSomData(searchString?: string, offset = 0) {
     let data = {};
     try {
@@ -42,6 +29,20 @@ async function getMovieSomData(searchString?: string, offset = 0) {
         console.error(e);
     }
     return data;
+}
+
+export async function getPretendApiData() {
+    const res = await Promise.all([
+        getData(),
+        getMovieSomData("marvel"),
+        getMovieSomData("netflix")
+    ]);
+    return {
+        ...res[0],
+        news: await getMovieSomData(),
+        marvel: res[1],
+        netflix: res[2]
+    };
 }
 
 async function getData() {
