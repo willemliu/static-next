@@ -6,13 +6,13 @@ function Menu() {
     return (
         <nav className={styles.nav}>
             <Link href="/">
-                <a>Home SPA</a>
+                <a>Home</a>
             </Link>
             <Link href="/ssg/[slug]" as="/ssg/static-generated">
-                <a>Static SPA</a>
+                <a>Static</a>
             </Link>
             <Link href="/ssg/[slug]" as="/ssg/static-generated2">
-                <a>Static SPA 2</a>
+                <a>Static 2</a>
             </Link>
             <Link href="/ssr/[slug]" as="/ssr/server-side-rendered">
                 <a>SSR</a>
@@ -21,16 +21,16 @@ function Menu() {
                 <a>SSR 2</a>
             </Link>
             <Link href="/hybrid/[slug]" as="/hybrid/hybrid-ssr">
-                <a>Hybrid-SSR SPA</a>
+                <a>Hybrid-SSR</a>
             </Link>
             <Link href="/hybrid/[slug]" as="/hybrid/hybrid-ssr2">
-                <a>Hybrid-SSR SPA 2</a>
+                <a>Hybrid-SSR 2</a>
             </Link>
             <Link href="/csr/[slug]" as="/csr/client-side-rendered">
-                <a>CSR SPA</a>
+                <a>CSR</a>
             </Link>
             <Link href="/csr/[slug]" as="/csr/client-side-rendered2">
-                <a>CSR SPA 2</a>
+                <a>CSR 2</a>
             </Link>
         </nav>
     );

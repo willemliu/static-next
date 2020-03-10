@@ -22,22 +22,18 @@ function Index(props: any) {
             <ul>
                 <li>
                     <Link href="/">
-                        <a title="getStaticProps and getStaticPaths">
-                            Home SPA
-                        </a>
+                        <a title="getStaticProps and getStaticPaths">Home</a>
                     </Link>
                 </li>
                 <li>
                     <Link href="/ssg/[slug]" as="/ssg/static-generated">
-                        <a title="getStaticProps and getStaticPaths">
-                            Static SPA
-                        </a>
+                        <a title="getStaticProps and getStaticPaths">Static</a>
                     </Link>
                 </li>
                 <li>
                     <Link href="/ssg/[slug]" as="/ssg/static-generated2">
                         <a title="getStaticProps and getStaticPaths">
-                            Static SPA 2
+                            Static 2
                         </a>
                     </Link>
                 </li>
@@ -50,32 +46,32 @@ function Index(props: any) {
             <ul>
                 <li>
                     <Link href="/ssr/[slug]" as="/ssr/server-side-rendered">
-                        <a title="getServerSideProps">SSR SPA</a>
+                        <a title="getServerSideProps">SSR</a>
                     </Link>
                 </li>
                 <li>
                     <Link href="/ssr/[slug]" as="/ssr/server-side-rendered2">
-                        <a title="getServerSideProps">SSR SPA 2</a>
+                        <a title="getServerSideProps">SSR 2</a>
                     </Link>
                 </li>
                 <li>
                     <Link href="/hybrid/[slug]" as="/hybrid/hybrid-ssr">
-                        <a title="getInitialProps">Hybrid-SSR SPA</a>
+                        <a title="getInitialProps">Hybrid-SSR</a>
                     </Link>
                 </li>
                 <li>
                     <Link href="/hybrid/[slug]" as="/hybrid/hybrid-ssr2">
-                        <a title="getInitialProps">Hybrid-SSR SPA 2</a>
+                        <a title="getInitialProps">Hybrid-SSR 2</a>
                     </Link>
                 </li>
                 <li>
                     <Link href="/csr/[slug]" as="/csr/client-side-rendered">
-                        <a title="useEffect">CSR SPA</a>
+                        <a title="useEffect">CSR</a>
                     </Link>
                 </li>
                 <li>
                     <Link href="/csr/[slug]" as="/csr/client-side-rendered2">
-                        <a title="useEffect">CSR SPA 2</a>
+                        <a title="useEffect">CSR 2</a>
                     </Link>
                 </li>
             </ul>
