@@ -3,11 +3,20 @@
     "regions": ["dub1"],
     "headers": [
         {
-            "source": "/(.*)",
+            "source": "/_next/(.*)",
             "headers": [
                 {
                     "key": "Cache-Control",
                     "value": "max-age=0, max-stale, s-maxage=5, stale-while-revalidate=30"
+                }
+            ]
+        },
+        {
+            "source": "/images/(.*)",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "max-age=0, max-stale, s-maxage=5, stale-while-revalidate=86400"
                 }
             ]
         }
