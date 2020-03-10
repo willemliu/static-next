@@ -6,18 +6,25 @@ function Index(props: any) {
         <>
             <h1>SSR [{props?.name}]</h1>
             <p>
-                This page is server-side-rendered. No matter how you land on
-                this page (link or direct). You'll always be served a SSR
-                version of the page. The "Page generated on:" date also changes
-                with every visit because the page is re-rendered server-side
-                upon every visit.
+                This page is server-side-rendered. The "Page generated on:" date
+                also changes with every visit because the page data is refetched
+                by calling `getServerSideProps` on the server-side.
             </p>
             <p>Some of the effects of SSR:</p>
             <ul>
-                <li>Always longest TTFB</li>
-                <li>Always the up-to-date version of the page</li>
+                <li>Long TTFB (when directly hitting an endpoint)</li>
+                <li>
+                    Short TTFB (when navigating using the links on the page as
+                    SPA)
+                </li>
+                <li>
+                    Always up-to-date version of the data (SSR or CSR with
+                    re-hydration)
+                </li>
                 <li>No flickering caused by rendering dynamic data</li>
-                <li>Breaks SPA navigation</li>
+                <li>
+                    <s>Breaks SPA navigation</s> SPA capable since NextJS v9.3+
+                </li>
             </ul>
             <p>
                 This implementation uses <i>getServerSideProps</i>.
