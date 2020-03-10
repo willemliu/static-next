@@ -20,14 +20,14 @@ function Index(props: any) {
                 <li>Breaks SPA navigation</li>
             </ul>
             <p>
-                This implementation uses <i>getServerProps</i>.
+                This implementation uses <i>getServerSideProps</i>.
             </p>
             <Regenerate date={props?.date} />
         </>
     );
 }
 
-async function getServerProps(context) {
+export async function getServerSideProps(context: any) {
     const res = await fetch(
         "https://static-next.willemliu.now.sh/api/test"
     ).then((res) => res.json());
@@ -36,7 +36,5 @@ async function getServerProps(context) {
         props: { ...res, name: context.query.slug }
     };
 }
-
-export { getServerProps as unstable_getServerProps };
 
 export default Index;

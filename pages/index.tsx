@@ -78,14 +78,12 @@ function Index(props: any) {
     );
 }
 
-const getStaticProps = async ({ params }) => {
+export const getStaticProps = async ({ params }) => {
     console.log("getStaticProps", params);
     const res = await fetch(
         "https://static-next.willemliu.now.sh/api/test"
     ).then((res) => res.json());
     return { props: { ...res } };
 };
-
-export { getStaticProps as unstable_getStaticProps, Index };
 
 export default Index;

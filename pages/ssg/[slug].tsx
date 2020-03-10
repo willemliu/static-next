@@ -1,5 +1,6 @@
 import "isomorphic-unfetch";
 import { Regenerate } from "../../src/components/Regenerate";
+import Link from "next/link";
 
 function Index(props: any) {
     return (
@@ -18,6 +19,26 @@ function Index(props: any) {
                 <li>No flickering caused by rendering dynamic data</li>
                 <li>SPA capable</li>
             </ul>
+            <p>With `fallback: true`:</p>
+            <ul>
+                <li>
+                    <p>
+                        Slugs not explicitly handled by `getStaticPaths` for
+                        static generation can be statically generated upon first
+                        visit. Try it out by visiting some non-sense url like:
+                    </p>
+                    <Link
+                        href="/ssg/[slug]"
+                        as="/ssg/sadasdasdasdasdasdqweqwdeasdqweqw"
+                    >
+                        <a>nonsensical SSG URL</a>
+                    </Link>
+                    <p>
+                        Subsequent visits to this weird URL will then serve up
+                        the statically generated version.
+                    </p>
+                </li>
+            </ul>
             <p>
                 This implementation uses <i>getStaticProps</i> and{" "}
                 <i>getStaticPaths</i>.
@@ -27,27 +48,23 @@ function Index(props: any) {
     );
 }
 
-async function getStaticProps(context) {
+export async function getStaticProps(context: any) {
     const res = await fetch(
         "https://static-next.willemliu.now.sh/api/test"
     ).then((res) => res.json());
     console.log("getStaticProps", res, context.params, context.query);
-    return { props: { ...res, name: context.params.slug } };
+    return { props: { ...res, name: context.params.slug ?? context.query } };
 }
 
-async function getStaticPaths(context) {
+export async function getStaticPaths(context: any) {
     const res = await fetch(
         "https://static-next.willemliu.now.sh/api/getRoutes"
     ).then((res) => res.json());
     console.log("getStaticPaths", res, context);
     return {
-        paths: res
+        paths: res,
+        fallback: true
     };
 }
-
-export {
-    getStaticProps as unstable_getStaticProps,
-    getStaticPaths as unstable_getStaticPaths
-};
 
 export default Index;

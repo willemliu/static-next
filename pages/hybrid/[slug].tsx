@@ -39,7 +39,7 @@ function Index(props: any) {
     );
 }
 
-Index.getInitialProps = async (context) => {
+Index.getInitialProps = async (context: any) => {
     const res = await fetch(
         "https://static-next.willemliu.now.sh/api/test"
     ).then((res) => res.json());
