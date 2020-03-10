@@ -40,6 +40,7 @@ export async function getPretendApiData() {
     return {
         ...res[0],
         news: await getMovieSomData(),
+        hbo: await getMovieSomData("hbo"),
         marvel: res[1],
         netflix: res[2]
     };
