@@ -5,7 +5,7 @@ This project showcases the differences between the rendering strategies provided
 The strategies involves data-fetching implementations in:
 
 -   getInitialProps
--   getServerProps
+-   getServerSideProps
 -   getStaticProps
 -   getStaticPaths
 -   useEffect
