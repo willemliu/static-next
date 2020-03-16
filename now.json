@@ -1,6 +1,6 @@
 {
     "version": 2,
-    "regions": ["dub1"],
+    "regions": ["bru1"],
     "headers": [
         {
             "source": "/_next/(.*)",
