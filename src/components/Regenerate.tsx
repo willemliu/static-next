@@ -18,7 +18,7 @@ function Regenerate(props: Props) {
                 <a
                     href={`${protocol}//${host}/api/regenerate`}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noopener noreferrer nofollow"
                 >
                     Regenerate site
                 </a>{" "}
