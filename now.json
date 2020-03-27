@@ -28,7 +28,7 @@
         },
         {
             "source": "/rss/fd",
-            "destination": "https://fd.nl?rss"
+            "destination": "https://fd.nl/?rss"
         },
         {
             "source": "/rss/fd/:section",
