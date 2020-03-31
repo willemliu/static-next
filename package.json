@@ -10,15 +10,15 @@
     "author": "Willem Liu",
     "license": "ISC",
     "dependencies": {
-        "next": "^9.3.0",
-        "react": "^16.13.0",
-        "react-dom": "^16.13.0"
+        "next": "^9.3.3",
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1"
     },
     "devDependencies": {
         "@types/graphql": "^14.5.0",
         "@types/micro-cors": "^0.1.0",
-        "@types/node": "^13.9.0",
-        "@types/react": "^16.9.23",
+        "@types/node": "^13.9.8",
+        "@types/react": "^16.9.29",
         "apollo": "^2.25.0",
         "apollo-boost": "^0.4.7",
         "graphql": "^14.6.0",
