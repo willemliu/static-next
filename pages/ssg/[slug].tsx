@@ -60,10 +60,16 @@ export async function getStaticProps(context: any) {
     const res = await getPretendApiData();
     const data = {
         ...res,
-        name: context.params.slug ?? context.query
+        name: context.params.slug ?? context.query,
     };
     console.log("getStaticProps", context.params, context.query);
-    return { props: { ...data, debugValue: JSON.stringify(data, null, 2) } };
+    return {
+        props: { ...data, debugValue: JSON.stringify(data, null, 2) },
+        // we will attempt to re-generate the page:
+        // - when a request comes in
+        // - at most once every 10 seconds
+        unstable_revalidate: 10,
+    };
 }
 
 export async function getStaticPaths(context: any) {
@@ -73,7 +79,7 @@ export async function getStaticPaths(context: any) {
     console.log("getStaticPaths", res, context);
     return {
         paths: res,
-        fallback: true
+        fallback: true,
     };
 }
 
