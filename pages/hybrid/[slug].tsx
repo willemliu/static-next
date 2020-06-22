@@ -11,7 +11,7 @@ function Index(props: any) {
             <p>
                 Hybrid SSR works as follows. If you land on the URL directly
                 then you'll get a SSR page. When you navigate to this page using
-                the links on the website you'll get a CSR page.
+                the links on the website you'll get a CSR page.{" "}
                 <i>getInitialProps</i> function is called regardless of how you
                 landed on this page. When you land on this page directly the{" "}
                 <i>getInitialProps</i> is called on the server. When you
@@ -47,7 +47,7 @@ Index.getInitialProps = async (context: any) => {
     console.log("getInitialProps", context.params, context.query);
     const data = {
         ...res,
-        name: context.query.slug
+        name: context.query.slug,
     };
     return { ...data, debugValue: JSON.stringify(data, null, 2) };
 };
