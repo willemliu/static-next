@@ -14,14 +14,14 @@ async function getMovieSomData(searchString?: string, offset = 0) {
             const graphRes = await getApolloClient(customHeaders, false).query({
                 query: NEWS,
                 variables: {
-                    offset
-                }
+                    offset,
+                },
             });
             data = graphRes.data.newsPaged;
         } else {
             const graphRes = await getApolloClient(customHeaders, false).query({
                 query: SEARCH_NEWS,
-                variables: { q: searchString, offset }
+                variables: { q: searchString, offset },
             });
             data = graphRes.data.searchNewsPaged;
         }
@@ -32,23 +32,18 @@ async function getMovieSomData(searchString?: string, offset = 0) {
 }
 
 export async function getPretendApiData() {
-    const res = await Promise.all([
-        getData(),
-        getMovieSomData("marvel"),
-        getMovieSomData("netflix")
-    ]);
+    const res = await Promise.all([getData(), getMovieSomData("marvel")]);
     return {
         ...res[0],
         news: await getMovieSomData(),
         hbo: await getMovieSomData("hbo"),
         marvel: res[1],
-        netflix: res[2]
     };
 }
 
 async function getData() {
     return {
-        date: new Date().toLocaleString()
+        date: new Date().toLocaleString(),
     };
 }
 
