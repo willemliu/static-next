@@ -32,6 +32,11 @@ function Index(props: any) {
                 </li>
                 <li>No flickering caused by rendering dynamic data</li>
                 <li>SPA capable</li>
+                <li>
+                    Client-side SPA navigation is faster than
+                    `getServerSideProps` because no extra round-trip back to the
+                    server is required.
+                </li>
             </ul>
             <p>
                 This implementation uses <i>getInitialProps</i>.

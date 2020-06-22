@@ -27,6 +27,10 @@ function Index(props: any) {
                 <li>
                     <s>Breaks SPA navigation</s> SPA capable since NextJS v9.3+
                 </li>
+                <li>
+                    Client-side SPA navigation is slower than `getInitialProps`
+                    because of extra round-trip.
+                </li>
             </ul>
             <p>
                 This implementation uses <i>getServerSideProps</i>.
@@ -43,10 +47,10 @@ export async function getServerSideProps(context: any) {
     console.log("getServerProps", context.params, context.query);
     const data = {
         ...res,
-        name: context.query.slug
+        name: context.query.slug,
     };
     return {
-        props: { ...data, debugValue: JSON.stringify(data, null, 2) }
+        props: { ...data, debugValue: JSON.stringify(data, null, 2) },
     };
 }
 
