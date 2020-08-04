@@ -73,7 +73,7 @@ export async function getStaticProps(context: any) {
         // we will attempt to re-generate the page:
         // - when a request comes in
         // - at most once every 10 seconds
-        unstable_revalidate: 10,
+        revalidate: 10,
     };
 }
 
@@ -83,7 +83,7 @@ export async function getStaticPaths(context: any) {
     ).then((res) => res.json());
     console.log("getStaticPaths", res, context);
     return {
-        paths: res,
+        res,
         fallback: true,
     };
 }
