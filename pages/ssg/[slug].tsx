@@ -83,7 +83,7 @@ export async function getStaticPaths(context: any) {
     ).then((res) => res.json());
     console.log("getStaticPaths", res, context);
     return {
-        res,
+        paths: res,
         fallback: true,
     };
 }
