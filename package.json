@@ -5,6 +5,7 @@
     "main": "index.js",
     "scripts": {
         "build": "next build",
+        "dev": "next dev",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "Willem Liu",
