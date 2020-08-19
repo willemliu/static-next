@@ -78,14 +78,10 @@ export async function getStaticProps(context: any) {
 }
 
 export async function getStaticPaths(context: any) {
-    const res =
-        [
-            { params: { slug: "static-site-regeneration" } },
-            { params: { slug: "static-site-regeneration2" } },
-        ] ||
-        (await fetch(
-            "https://static-next.willemliu.now.sh/api/getRoutes"
-        ).then((res) => res.json()));
+    const res = [
+        { params: { slug: "static-site-regeneration" } },
+        { params: { slug: "static-site-regeneration2" } },
+    ];
     console.log("getStaticPaths", res, context);
     return {
         paths: res,
