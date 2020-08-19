@@ -7,19 +7,19 @@ import { getPretendApiData } from "../api/test";
 function Index(props: any) {
     return (
         <>
-            <h1>SSG [{props?.name}]</h1>
+            <h1>SSRG [{props?.name}]</h1>
             <p>
-                This page is statically generated and does not update until
-                redeployed. You'll notice that the "Page generated on:" date
-                doesn't change until the website is redeployed. Use the
-                "Regenerate site" link below to redeploy.
+                This page is statically generated but also revalidates
+                (regenerates) if a user lands on this page 10s after the last
+                regeneration has occurred.
             </p>
-            <p>Some of the effects of SSG:</p>
+            <p>Some of the effects of SSRG:</p>
             <ul>
                 <li>Short TTFB (can compete with CSR)</li>
                 <li>Static data (can be stale if not used correctly)</li>
                 <li>No flickering caused by rendering dynamic data</li>
                 <li>SPA capable</li>
+                <li>Content is updated automatically</li>
             </ul>
             <p>With `fallback: true`:</p>
             <ul>
@@ -30,10 +30,10 @@ function Index(props: any) {
                         visit. Try it out by visiting some non-sense url like:
                     </p>
                     <Link
-                        href="/ssg/[slug]"
-                        as="/ssg/sadasdasdasdasdasdqweqwdeasdqweqw"
+                        href="/ssrg/[slug]"
+                        as="/ssrg/sadasdasdasdasdasdqweqwdeasdqweqw"
                     >
-                        <a>nonsensical SSG URL</a>
+                        <a>nonsensical SSRG URL</a>
                     </Link>
                     <p>
                         Subsequent visits to this weird URL will then serve up
@@ -47,8 +47,13 @@ function Index(props: any) {
                 </li>
             </ul>
             <p>
-                This implementation uses <i>getStaticProps</i> and{" "}
-                <i>getStaticPaths</i>.
+                This implementation uses <i>getStaticProps</i> with{" "}
+                <i>revalidate=10</i> and <i>getStaticPaths</i>.
+            </p>
+            <p>
+                This page also auto-regenerates 10 seconds after a request to
+                this page has been made. The regeneration itself may take a
+                while and also the CDN edge cache flushes.
             </p>
             <Regenerate date={props?.date} />
             <DebugArea value={props?.debugValue} />
@@ -65,14 +70,18 @@ export async function getStaticProps(context: any) {
     console.log("getStaticProps", context.params, context.query);
     return {
         props: { ...data, debugValue: JSON.stringify(data, null, 2) },
+        // we will attempt to re-generate the page:
+        // - when a request comes in
+        // - at most once every 10 seconds
+        revalidate: 10,
     };
 }
 
 export async function getStaticPaths(context: any) {
     const res =
         [
-            { params: { slug: "static-generated" } },
-            { params: { slug: "static-generated2" } },
+            { params: { slug: "static-site-regeneration" } },
+            { params: { slug: "static-site-regeneration2" } },
         ] ||
         (await fetch(
             "https://static-next.willemliu.now.sh/api/getRoutes"

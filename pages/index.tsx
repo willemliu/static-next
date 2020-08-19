@@ -76,6 +76,22 @@ function Index(props: any) {
                         <a title="useEffect">CSR 2</a>
                     </Link>
                 </li>
+                <li>
+                    <Link
+                        href="/ssrg/[slug]"
+                        as="/ssrg/static-site-regeneration"
+                    >
+                        <a title="getStaticProps">SSRG</a>
+                    </Link>
+                </li>
+                <li>
+                    <Link
+                        href="/ssrg/[slug]"
+                        as="/ssrg/static-site-regeneration2"
+                    >
+                        <a title="getStaticProps">SSRG 2</a>
+                    </Link>
+                </li>
             </ul>
             <Regenerate date={props?.date} />
             <DebugArea value={props?.debugValue} />
@@ -89,7 +105,7 @@ export const getStaticProps = async (context: any) => {
     console.log("getStaticProps", context.params, context.query);
     const data = {
         ...res,
-        name: "Home"
+        name: "Home",
     };
     return { props: { ...data, debugValue: JSON.stringify(data, null, 2) } };
 };
