@@ -50,11 +50,6 @@ function Index(props: any) {
                 This implementation uses <i>getStaticProps</i> with{" "}
                 <i>revalidate=10</i> and <i>getStaticPaths</i>.
             </p>
-            <p>
-                This page also auto-regenerates 10 seconds after a request to
-                this page has been made. The regeneration itself may take a
-                while and also the CDN edge cache flushes.
-            </p>
             <Regenerate date={props?.date} />
             <DebugArea value={props?.debugValue} />
         </>
