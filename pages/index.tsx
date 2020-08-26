@@ -78,18 +78,18 @@ function Index(props: any) {
                 </li>
                 <li>
                     <Link
-                        href="/ssrg/[slug]"
-                        as="/ssrg/static-site-regeneration"
+                        href="/isr/[slug]"
+                        as="/isr/incremental-static-regeneration"
                     >
-                        <a title="getStaticProps">SSRG</a>
+                        <a title="getStaticProps">ISR</a>
                     </Link>
                 </li>
                 <li>
                     <Link
-                        href="/ssrg/[slug]"
-                        as="/ssrg/static-site-regeneration2"
+                        href="/isr/[slug]"
+                        as="/isr/incremental-static-regeneration2"
                     >
-                        <a title="getStaticProps">SSRG 2</a>
+                        <a title="getStaticProps">ISR 2</a>
                     </Link>
                 </li>
             </ul>

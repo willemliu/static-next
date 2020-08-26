@@ -32,10 +32,10 @@ function Menu() {
             <Link href="/csr/[slug]" as="/csr/client-side-rendered2">
                 <a>CSR 2</a>
             </Link>
-            <Link href="/ssrg/[slug]" as="/ssrg/static-site-regeneration">
+            <Link href="/isr/[slug]" as="/isr/incremental-static-regeneration">
                 <a>Static Regen</a>
             </Link>
-            <Link href="/ssrg/[slug]" as="/ssrg/static-site-regeneration2">
+            <Link href="/isr/[slug]" as="/isr/incremental-static-regeneration2">
                 <a>Static Regen 2</a>
             </Link>
         </nav>

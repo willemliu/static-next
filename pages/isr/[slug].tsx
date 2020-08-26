@@ -7,13 +7,13 @@ import { getPretendApiData } from "../api/test";
 function Index(props: any) {
     return (
         <>
-            <h1>SSRG [{props?.name}]</h1>
+            <h1>ISR [{props?.name}]</h1>
             <p>
                 This page is statically generated but also revalidates
                 (regenerates) if a user lands on this page 10s after the last
                 regeneration has occurred.
             </p>
-            <p>Some of the effects of SSRG:</p>
+            <p>Some of the effects of ISR:</p>
             <ul>
                 <li>Short TTFB (can compete with CSR)</li>
                 <li>Static data (can be stale if not used correctly)</li>
@@ -30,8 +30,8 @@ function Index(props: any) {
                         visit. Try it out by visiting some non-sense url like:
                     </p>
                     <Link
-                        href="/ssrg/[slug]"
-                        as="/ssrg/sadasdasdasdasdasdqweqwdeasdqweqw"
+                        href="/isr/[slug]"
+                        as="/isr/sadasdasdasdasdasdqweqwdeasdqweqw"
                     >
                         <a>nonsensical SSRG URL</a>
                     </Link>
@@ -74,8 +74,8 @@ export async function getStaticProps(context: any) {
 
 export async function getStaticPaths(context: any) {
     const res = [
-        { params: { slug: "static-site-regeneration" } },
-        { params: { slug: "static-site-regeneration2" } },
+        { params: { slug: "incremental-static-regeneration" } },
+        { params: { slug: "incremental-static-regeneration2" } },
     ];
     console.log("getStaticPaths", res, context);
     return {
