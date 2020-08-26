@@ -8,7 +8,7 @@ interface Props {
 function DebugArea(props: Props) {
     return (
         <section className={styles.debugArea}>
-            <label htmlFor="debugArea">3rd party API perf test</label>
+            <label htmlFor="debugArea">Debug</label>
             <textarea
                 id="debugArea"
                 defaultValue={props.value}
