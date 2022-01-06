@@ -34,11 +34,5 @@
             "source": "/rss/fd/:section",
             "destination": "https://fd.nl/$1/?rss"
         }
-    ],
-    "build": {
-        "env": {
-            "JWT_TOKEN_READ": "@moviesom-news-jwt-token",
-            "MOVIESOM_API_URL": "@moviesom-api-url"
-        }
-    }
+    ]
 }
