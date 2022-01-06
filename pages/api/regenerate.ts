@@ -10,7 +10,8 @@ async function regenerate(req, res) {
     ).then((res) => res.json());
 
     const webhookAWSAmplify = fetch(
-        'https://webhooks.amplify.eu-west-1.amazonaws.com/prod/webhooks?id=39136c3c-a922-4014-8f44-7ffc09af7da6&token=hCtGi1YQdYDPvBJPlSFU9O6s8XrMMo7hjuLJDdz5wn4'
+        'https://webhooks.amplify.eu-west-1.amazonaws.com/prod/webhooks?id=39136c3c-a922-4014-8f44-7ffc09af7da6&token=hCtGi1YQdYDPvBJPlSFU9O6s8XrMMo7hjuLJDdz5wn4',
+        { method: 'POST' }
     ).then((res) => res.json());
 
     const response = await Promise.all([webhookVercel, webhookAWSAmplify]);
