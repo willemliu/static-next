@@ -3,6 +3,11 @@ interface Props {
     date?: string;
 }
 
+/**
+ * Rebuild page link
+ * @param props
+ * @returns
+ */
 function Regenerate(props: Props) {
     const [protocol, setProtocol] = useState('http:');
     const [host, setHost] = useState('localhost:3000');

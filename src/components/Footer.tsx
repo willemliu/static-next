@@ -1,6 +1,10 @@
 import React from 'react';
 import styles from './Footer.module.scss';
 
+/**
+ * Footer
+ * @returns
+ */
 function Footer() {
     return (
         <footer className={styles.footer}>

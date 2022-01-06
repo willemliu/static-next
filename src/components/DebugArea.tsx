@@ -5,6 +5,11 @@ interface Props {
     value: string;
 }
 
+/**
+ * TextArea with debug logging.
+ * @param props
+ * @returns
+ */
 function DebugArea(props: Props) {
     return (
         <section className={styles.debugArea}>
