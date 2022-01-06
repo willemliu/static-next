@@ -1,5 +1,5 @@
-import React from "react";
-import styles from "./DebugArea.module.scss";
+import React from 'react';
+import styles from './DebugArea.module.scss';
 
 interface Props {
     value: string;

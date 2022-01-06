@@ -1,6 +1,6 @@
-import React from "react";
-import Link from "next/link";
-import styles from "./Menu.module.scss";
+import React from 'react';
+import Link from 'next/link';
+import styles from './Menu.module.scss';
 
 function Menu() {
     return (

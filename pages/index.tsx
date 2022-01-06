@@ -1,9 +1,9 @@
-import React from "react";
-import "isomorphic-unfetch";
-import { Regenerate } from "../src/components/Regenerate";
-import Link from "next/link";
-import { getPretendApiData } from "./api/test";
-import { DebugArea } from "../src/components/DebugArea";
+import React from 'react';
+import 'isomorphic-unfetch';
+import { Regenerate } from '../src/components/Regenerate';
+import Link from 'next/link';
+import { getPretendApiData } from './api/test';
+import { DebugArea } from '../src/components/DebugArea';
 
 function Index(props: any) {
     return (
@@ -39,7 +39,7 @@ function Index(props: any) {
                         </a>
                     </Link>
                 </li>
-            </ul>{" "}
+            </ul>{' '}
             <p>
                 On dynamically rendered pages the date behind "Page generated
                 on:" always reflects the moment the page is being rendered.
@@ -102,10 +102,10 @@ function Index(props: any) {
 export const getStaticProps = async (context: any) => {
     const res = await getPretendApiData();
 
-    console.log("getStaticProps", context.params, context.query);
+    console.log('getStaticProps', context.params, context.query);
     const data = {
         ...res,
-        name: "Home",
+        name: 'Home',
     };
     return { props: { ...data, debugValue: JSON.stringify(data, null, 2) } };
 };

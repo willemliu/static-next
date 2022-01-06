@@ -1,7 +1,7 @@
-import "isomorphic-unfetch";
-import { Regenerate } from "../../src/components/Regenerate";
-import { getPretendApiData } from "../api/test";
-import { DebugArea } from "../../src/components/DebugArea";
+import 'isomorphic-unfetch';
+import { Regenerate } from '../../src/components/Regenerate';
+import { getPretendApiData } from '../api/test';
+import { DebugArea } from '../../src/components/DebugArea';
 
 function Index(props: any) {
     return (
@@ -44,7 +44,7 @@ function Index(props: any) {
 export async function getServerSideProps(context: any) {
     const res = await getPretendApiData();
 
-    console.log("getServerProps", context.params, context.query);
+    console.log('getServerProps', context.params, context.query);
     const data = {
         ...res,
         name: context.query.slug,

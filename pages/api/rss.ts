@@ -1,7 +1,7 @@
-export default (req, res) => {
-    res.statusCode = 200;
-    res.setHeader("Content-Type", "application/rss+xml;charset=UTF-8");
-    res.end(`<?xml version="1.0" encoding="UTF-8" ?>
+const rss = (req, res) => {
+  res.statusCode = 200;
+  res.setHeader("Content-Type", "application/rss+xml;charset=UTF-8");
+  res.end(`<?xml version="1.0" encoding="UTF-8" ?>
     <rss version="2.0">
     
     <channel>
@@ -22,3 +22,5 @@ export default (req, res) => {
     
     </rss>`);
 };
+
+export default rss;

@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { Regenerate } from "../../src/components/Regenerate";
-import { useRouter } from "next/router";
-import { getPretendApiData } from "../api/test";
-import { DebugArea } from "../../src/components/DebugArea";
+import React, { useState, useEffect } from 'react';
+import { Regenerate } from '../../src/components/Regenerate';
+import { useRouter } from 'next/router';
+import { getPretendApiData } from '../api/test';
+import { DebugArea } from '../../src/components/DebugArea';
 
 function Index() {
     const router = useRouter();
@@ -10,11 +10,11 @@ function Index() {
     const [debugValue, setDebugValue] = useState(null);
 
     useEffect(() => {
-        console.log("useEffect", router, router.query);
+        console.log('useEffect', router, router.query);
         getPretendApiData().then((values) => {
             const data = {
                 ...values,
-                name: router.query.slug
+                name: router.query.slug,
             };
             setTestData(data);
             setDebugValue(JSON.stringify(data, null, 2));

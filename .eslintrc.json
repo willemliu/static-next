@@ -1,0 +1,8 @@
+{
+    "extends": ["next/core-web-vitals", "prettier"],
+    "rules": {
+        "@next/next/no-img-element": "off",
+        "@next/next/no-sync-scripts": "warn",
+        "react/no-unescaped-entities": "off"
+    }
+}

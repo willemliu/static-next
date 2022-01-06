@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 interface Props {
     date?: string;
 }
 
 function Regenerate(props: Props) {
-    const [protocol, setProtocol] = useState("http:");
-    const [host, setHost] = useState("localhost:3000");
+    const [protocol, setProtocol] = useState('http:');
+    const [host, setHost] = useState('localhost:3000');
     useEffect(() => {
         setHost(window.location.host);
         setProtocol(window.location.protocol);
@@ -21,7 +21,7 @@ function Regenerate(props: Props) {
                     rel="noopener noreferrer nofollow"
                 >
                     Regenerate site
-                </a>{" "}
+                </a>{' '}
                 <small>(takes a minute)</small>
             </div>
         </>

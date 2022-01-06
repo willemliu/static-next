@@ -1,8 +1,8 @@
-import "isomorphic-unfetch";
-import { Regenerate } from "../../src/components/Regenerate";
-import Link from "next/link";
-import { DebugArea } from "../../src/components/DebugArea";
-import { getPretendApiData } from "../api/test";
+import 'isomorphic-unfetch';
+import { Regenerate } from '../../src/components/Regenerate';
+import Link from 'next/link';
+import { DebugArea } from '../../src/components/DebugArea';
+import { getPretendApiData } from '../api/test';
 
 function Index(props: any) {
     return (
@@ -47,7 +47,7 @@ function Index(props: any) {
                 </li>
             </ul>
             <p>
-                This implementation uses <i>getStaticProps</i> with{" "}
+                This implementation uses <i>getStaticProps</i> with{' '}
                 <i>revalidate=10</i> and <i>getStaticPaths</i>.
             </p>
             <Regenerate date={props?.date} />
@@ -62,7 +62,7 @@ export async function getStaticProps(context: any) {
         ...res,
         name: context.params.slug ?? context.query,
     };
-    console.log("getStaticProps", context.params, context.query);
+    console.log('getStaticProps', context.params, context.query);
     return {
         props: { ...data, debugValue: JSON.stringify(data, null, 2) },
         // we will attempt to re-generate the page:
@@ -74,10 +74,10 @@ export async function getStaticProps(context: any) {
 
 export async function getStaticPaths(context: any) {
     const res = [
-        { params: { slug: "incremental-static-regeneration" } },
-        { params: { slug: "incremental-static-regeneration2" } },
+        { params: { slug: 'incremental-static-regeneration' } },
+        { params: { slug: 'incremental-static-regeneration2' } },
     ];
-    console.log("getStaticPaths", res, context);
+    console.log('getStaticPaths', res, context);
     return {
         paths: res,
         fallback: true,
