@@ -4,4 +4,3 @@
 .vercel
 dist
 node_modules
-storybook-static
