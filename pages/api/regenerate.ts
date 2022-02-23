@@ -14,10 +14,10 @@ async function regenerate(
             '/ssg/static-generated2'
         );
         const revalidateISR = res.unstable_revalidate(
-            '/irs/incremental-static-regeneration'
+            '/isr/incremental-static-regeneration'
         );
         const revalidateISR2 = res.unstable_revalidate(
-            '/irs/incremental-static-regeneration2'
+            '/isr/incremental-static-regeneration2'
         );
 
         await Promise.all([
@@ -32,10 +32,11 @@ async function regenerate(
             revalidated: true,
             awsResponse,
             revalidateHome,
-            revalidateStaticGenerated: revalidateSSG,
-            revalidateStaticGenerated2: revalidateSSG2,
+            revalidateSSG,
+            revalidateSSG2,
         });
     } catch (err) {
+        console.error(err);
         // If there was an error, Next.js will continue
         // to show the last successfully generated page
         return res.status(500).send('Error revalidating');
