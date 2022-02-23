@@ -1,4 +1,3 @@
-import 'isomorphic-unfetch';
 import { Regenerate } from '../../src/components/Regenerate';
 import Link from 'next/link';
 import { DebugArea } from '../../src/components/DebugArea';

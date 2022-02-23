@@ -1,4 +1,3 @@
-import 'isomorphic-unfetch';
 import { Regenerate } from '../../src/components/Regenerate';
 import { getPretendApiData } from '../api/test';
 import { DebugArea } from '../../src/components/DebugArea';

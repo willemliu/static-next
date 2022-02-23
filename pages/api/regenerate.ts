@@ -1,21 +1,33 @@
-import Cors from 'micro-cors';
-import 'isomorphic-unfetch';
-const cors = Cors({ allowMethods: ['GET', 'HEAD'] });
+import { NextApiRequest, NextApiResponse } from 'next';
 
-async function regenerate(req, res) {
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'application/json');
-    const webhookVercel = fetch(process.env.WEBHOOK_VERCEL).then((res) =>
-        res.json()
-    );
+async function regenerate(
+    req: NextApiRequest,
+    res: NextApiResponse & { unstable_revalidate: any }
+) {
+    try {
+        const awsResponse = fetch(process.env.WEBHOOK_AWS_AMPLIFY, {
+            method: 'POST',
+        }).then((res) => res.json());
+        const revalidateHome = res.unstable_revalidate('/');
+        const revalidateStaticGenerated = res.unstable_revalidate(
+            '/ssg/static-generated'
+        );
+        const revalidateStaticGenerated2 = res.unstable_revalidate(
+            '/ssg/static-generated2'
+        );
 
-    const webhookAWSAmplify = fetch(process.env.WEBHOOK_AWS_AMPLIFY, {
-        method: 'POST',
-    }).then((res) => res.json());
-
-    const response = await Promise.all([webhookVercel, webhookAWSAmplify]);
-
-    res.end(JSON.stringify(response));
+        Promise.all([
+            awsResponse,
+            revalidateHome,
+            revalidateStaticGenerated,
+            revalidateStaticGenerated2,
+        ]);
+        return res.json({ revalidated: true });
+    } catch (err) {
+        // If there was an error, Next.js will continue
+        // to show the last successfully generated page
+        return res.status(500).send('Error revalidating');
+    }
 }
 
-export default cors(regenerate);
+export default regenerate;

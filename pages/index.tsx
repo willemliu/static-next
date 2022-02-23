@@ -1,5 +1,4 @@
 import React from 'react';
-import 'isomorphic-unfetch';
 import { Regenerate } from '../src/components/Regenerate';
 import Link from 'next/link';
 import { getPretendApiData } from './api/test';
