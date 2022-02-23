@@ -22,7 +22,13 @@ async function regenerate(
             revalidateStaticGenerated,
             revalidateStaticGenerated2,
         ]);
-        return res.json({ revalidated: true });
+        return res.json({
+            revalidated: true,
+            awsResponse,
+            revalidateHome,
+            revalidateStaticGenerated,
+            revalidateStaticGenerated2,
+        });
     } catch (err) {
         // If there was an error, Next.js will continue
         // to show the last successfully generated page
