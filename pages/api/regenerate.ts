@@ -9,25 +9,31 @@ async function regenerate(
             method: 'POST',
         }).then((res) => res.json());
         const revalidateHome = res.unstable_revalidate('/');
-        const revalidateStaticGenerated = res.unstable_revalidate(
-            '/ssg/static-generated'
-        );
-        const revalidateStaticGenerated2 = res.unstable_revalidate(
+        const revalidateSSG = res.unstable_revalidate('/ssg/static-generated');
+        const revalidateSSG2 = res.unstable_revalidate(
             '/ssg/static-generated2'
         );
+        const revalidateISR = res.unstable_revalidate(
+            '/irs/incremental-static-regeneration'
+        );
+        const revalidateISR2 = res.unstable_revalidate(
+            '/irs/incremental-static-regeneration2'
+        );
 
-        Promise.all([
+        await Promise.all([
             awsResponse,
             revalidateHome,
-            revalidateStaticGenerated,
-            revalidateStaticGenerated2,
+            revalidateSSG,
+            revalidateSSG2,
+            revalidateISR,
+            revalidateISR2,
         ]);
         return res.json({
             revalidated: true,
             awsResponse,
             revalidateHome,
-            revalidateStaticGenerated,
-            revalidateStaticGenerated2,
+            revalidateStaticGenerated: revalidateSSG,
+            revalidateStaticGenerated2: revalidateSSG2,
         });
     } catch (err) {
         // If there was an error, Next.js will continue
