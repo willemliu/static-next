@@ -1,22 +1,17 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-async function regenerate(
-    req: NextApiRequest,
-    res: NextApiResponse & { unstable_revalidate: any }
-) {
+async function regenerate(req: NextApiRequest, res: NextApiResponse) {
     try {
         const awsResponse = fetch(process.env.WEBHOOK_AWS_AMPLIFY, {
             method: 'POST',
         }).then((res) => res.json());
-        const revalidateHome = res.unstable_revalidate('/');
-        const revalidateSSG = res.unstable_revalidate('/ssg/static-generated');
-        const revalidateSSG2 = res.unstable_revalidate(
-            '/ssg/static-generated2'
-        );
-        const revalidateISR = res.unstable_revalidate(
+        const revalidateHome = res.revalidate('/');
+        const revalidateSSG = res.revalidate('/ssg/static-generated');
+        const revalidateSSG2 = res.revalidate('/ssg/static-generated2');
+        const revalidateISR = res.revalidate(
             '/isr/incremental-static-regeneration'
         );
-        const revalidateISR2 = res.unstable_revalidate(
+        const revalidateISR2 = res.revalidate(
             '/isr/incremental-static-regeneration2'
         );
 
