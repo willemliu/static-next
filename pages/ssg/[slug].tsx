@@ -73,7 +73,7 @@ export async function getStaticPaths(context: any) {
             { params: { slug: 'static-generated' } },
             { params: { slug: 'static-generated2' } },
         ] ||
-        (await fetch('https://static-next.willemliu.now.sh/api/getRoutes').then(
+        (await fetch('https://static-next.vercel.app/api/getRoutes').then(
             (res) => res.json()
         ));
     console.log('getStaticPaths', res, context);

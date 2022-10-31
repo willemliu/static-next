@@ -81,6 +81,13 @@ function Menu(props: any) {
             >
                 Static Regen 2
             </Link>
+            <Link
+                href="/app/[slug]"
+                as="/app/react-server-components"
+                onClick={props.onClick}
+            >
+                RSC
+            </Link>
         </nav>
     );
 }

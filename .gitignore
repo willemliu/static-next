@@ -2,5 +2,6 @@
 .next
 .now
 .vercel
+.vscode
 dist
 node_modules

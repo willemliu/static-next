@@ -14,6 +14,7 @@ async function regenerate(req: NextApiRequest, res: NextApiResponse) {
         const revalidateISR2 = res.revalidate(
             '/isr/incremental-static-regeneration2'
         );
+        const revalidateRSC = res.revalidate('/app/react-server-components');
 
         await Promise.all([
             awsResponse,
@@ -22,6 +23,7 @@ async function regenerate(req: NextApiRequest, res: NextApiResponse) {
             revalidateSSG2,
             revalidateISR,
             revalidateISR2,
+            revalidateRSC,
         ]);
         return res.json({
             revalidated: true,
@@ -29,6 +31,7 @@ async function regenerate(req: NextApiRequest, res: NextApiResponse) {
             revalidateHome,
             revalidateSSG,
             revalidateSSG2,
+            revalidateRSC,
         });
     } catch (err) {
         console.error(err);

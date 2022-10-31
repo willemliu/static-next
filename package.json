@@ -8,10 +8,8 @@
         "dev": "next dev",
         "lint": "next lint",
         "prettier": "prettier -c **/*.ts?",
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "storybook": "start-storybook -p 6006",
-        "build-storybook": "build-storybook",
-        "storybook:upgrade": "npx sb upgrade"
+        "start": "next start",
+        "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "Willem Liu",
     "license": "ISC",
@@ -21,14 +19,6 @@
         "react-dom": "^18.2.0"
     },
     "devDependencies": {
-        "@babel/core": "^7.19.6",
-        "@storybook/addon-actions": "^6.5.13",
-        "@storybook/addon-essentials": "^6.5.13",
-        "@storybook/addon-links": "^6.5.13",
-        "@storybook/builder-webpack5": "^6.5.13",
-        "@storybook/manager-webpack5": "^6.5.13",
-        "@storybook/preset-scss": "^1.0.3",
-        "@storybook/react": "^6.5.13",
         "@types/micro-cors": "^0.1.2",
         "@types/node": "^18.11.8",
         "@types/react": "^18.0.24",
