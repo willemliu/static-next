@@ -32,7 +32,7 @@ function Index(props: any) {
                         href="/ssg/[slug]"
                         as="/ssg/sadasdasdasdasdasdqweqwdeasdqweqw"
                     >
-                        <a>nonsensical SSG URL</a>
+                        nonsensical SSG URL
                     </Link>
                     <p>
                         Subsequent visits to this weird URL will then serve up

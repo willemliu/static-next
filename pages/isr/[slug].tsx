@@ -32,7 +32,7 @@ function Index(props: any) {
                         href="/isr/[slug]"
                         as="/isr/sadasdasdasdasdasdqweqwdeasdqweqw"
                     >
-                        <a>nonsensical SSRG URL</a>
+                        nonsensical SSRG URL
                     </Link>
                     <p>
                         Subsequent visits to this weird URL will then serve up

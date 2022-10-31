@@ -22,20 +22,26 @@ function Index(props: any) {
             <p>Static pages:</p>
             <ul>
                 <li>
-                    <Link href="/">
-                        <a title="getStaticProps and getStaticPaths">Home</a>
+                    <Link href="/" title="getStaticProps and getStaticPaths">
+                        Home
                     </Link>
                 </li>
                 <li>
-                    <Link href="/ssg/[slug]" as="/ssg/static-generated">
-                        <a title="getStaticProps and getStaticPaths">Static</a>
+                    <Link
+                        href="/ssg/[slug]"
+                        as="/ssg/static-generated"
+                        title="getStaticProps and getStaticPaths"
+                    >
+                        Static
                     </Link>
                 </li>
                 <li>
-                    <Link href="/ssg/[slug]" as="/ssg/static-generated2">
-                        <a title="getStaticProps and getStaticPaths">
-                            Static 2
-                        </a>
+                    <Link
+                        href="/ssg/[slug]"
+                        as="/ssg/static-generated2"
+                        title="getStaticProps and getStaticPaths"
+                    >
+                        Static 2
                     </Link>
                 </li>
             </ul>{' '}
@@ -46,49 +52,75 @@ function Index(props: any) {
             <p>Dynamic pages:</p>
             <ul>
                 <li>
-                    <Link href="/ssr/[slug]" as="/ssr/server-side-rendered">
-                        <a title="getServerSideProps">SSR</a>
+                    <Link
+                        href="/ssr/[slug]"
+                        as="/ssr/server-side-rendered"
+                        title="getServerSideProps"
+                    >
+                        SSR
                     </Link>
                 </li>
                 <li>
-                    <Link href="/ssr/[slug]" as="/ssr/server-side-rendered2">
-                        <a title="getServerSideProps">SSR 2</a>
+                    <Link
+                        href="/ssr/[slug]"
+                        as="/ssr/server-side-rendered2"
+                        title="getServerSideProps"
+                    >
+                        SSR 2
                     </Link>
                 </li>
                 <li>
-                    <Link href="/hybrid/[slug]" as="/hybrid/hybrid-ssr">
-                        <a title="getInitialProps">Hybrid-SSR</a>
+                    <Link
+                        href="/hybrid/[slug]"
+                        as="/hybrid/hybrid-ssr"
+                        title="getInitialProps"
+                    >
+                        Hybrid-SSR
                     </Link>
                 </li>
                 <li>
-                    <Link href="/hybrid/[slug]" as="/hybrid/hybrid-ssr2">
-                        <a title="getInitialProps">Hybrid-SSR 2</a>
+                    <Link
+                        href="/hybrid/[slug]"
+                        as="/hybrid/hybrid-ssr2"
+                        title="getInitialProps"
+                    >
+                        Hybrid-SSR 2
                     </Link>
                 </li>
                 <li>
-                    <Link href="/csr/[slug]" as="/csr/client-side-rendered">
-                        <a title="useEffect">CSR</a>
+                    <Link
+                        href="/csr/[slug]"
+                        as="/csr/client-side-rendered"
+                        title="useEffect"
+                    >
+                        CSR
                     </Link>
                 </li>
                 <li>
-                    <Link href="/csr/[slug]" as="/csr/client-side-rendered2">
-                        <a title="useEffect">CSR 2</a>
+                    <Link
+                        href="/csr/[slug]"
+                        as="/csr/client-side-rendered2"
+                        title="useEffect"
+                    >
+                        CSR 2
                     </Link>
                 </li>
                 <li>
                     <Link
                         href="/isr/[slug]"
                         as="/isr/incremental-static-regeneration"
+                        title="getStaticProps"
                     >
-                        <a title="getStaticProps">ISR</a>
+                        ISR
                     </Link>
                 </li>
                 <li>
                     <Link
                         href="/isr/[slug]"
                         as="/isr/incremental-static-regeneration2"
+                        title="getStaticProps"
                     >
-                        <a title="getStaticProps">ISR 2</a>
+                        ISR 2
                     </Link>
                 </li>
             </ul>
