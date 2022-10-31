@@ -7,7 +7,7 @@ export default {
     component: DebugArea,
 } as ComponentMeta<typeof DebugArea>;
 
-const Template: ComponentStory<typeof DebugArea> = (args) => (
+const Template: ComponentStory<typeof DebugArea> = (args: any) => (
     <DebugArea {...args} />
 );
 

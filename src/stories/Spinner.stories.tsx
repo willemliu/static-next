@@ -7,7 +7,7 @@ export default {
     component: Spinner,
 } as ComponentMeta<typeof Spinner>;
 
-const Template: ComponentStory<typeof Spinner> = (args) => (
+const Template: ComponentStory<typeof Spinner> = (args: any) => (
     <Spinner {...args} />
 );
 

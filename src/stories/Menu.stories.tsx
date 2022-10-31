@@ -8,6 +8,6 @@ export default {
     argTypes: { onClick: { action: 'clicked' } },
 } as ComponentMeta<typeof Menu>;
 
-const Template: ComponentStory<typeof Menu> = (args) => <Menu {...args} />;
+const Template: ComponentStory<typeof Menu> = (args: any) => <Menu {...args} />;
 
 export const Default = Template.bind({});

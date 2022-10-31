@@ -7,7 +7,7 @@ export default {
     component: Regenerate,
 } as ComponentMeta<typeof Regenerate>;
 
-const Template: ComponentStory<typeof Regenerate> = (args) => (
+const Template: ComponentStory<typeof Regenerate> = (args: any) => (
     <Regenerate {...args} />
 );
 
