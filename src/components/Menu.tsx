@@ -88,6 +88,13 @@ function Menu(props: any) {
             >
                 RSC
             </Link>
+            <Link
+                href="/app/[slug]"
+                as="/app/react-server-components2"
+                onClick={props.onClick}
+            >
+                RSC 2
+            </Link>
         </nav>
     );
 }

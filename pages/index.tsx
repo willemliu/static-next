@@ -123,6 +123,24 @@ function Index(props: any) {
                         ISR 2
                     </Link>
                 </li>
+                <li>
+                    <Link
+                        href="/app/[slug]"
+                        as="/app/react-server-components"
+                        onClick={props.onClick}
+                    >
+                        RSC
+                    </Link>
+                </li>
+                <li>
+                    <Link
+                        href="/app/[slug]"
+                        as="/app/react-server-components2"
+                        onClick={props.onClick}
+                    >
+                        RSC 2
+                    </Link>
+                </li>
             </ul>
             <Regenerate date={props?.date} />
             <DebugArea value={props?.debugValue} />

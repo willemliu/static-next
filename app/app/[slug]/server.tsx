@@ -1,11 +1,11 @@
-'use client';
+'use server';
 
 interface Props {
     date: string;
 }
 
-function Client(props: Props) {
+function Server(props: Props) {
     return <>{props.date}</>;
 }
 
-export { Client };
+export { Server };
